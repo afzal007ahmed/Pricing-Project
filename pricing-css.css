@@ -2,6 +2,7 @@ html{
     height:100vh;
 padding: 0;
 margin: 0;
+box-sizing: border-box;
 }
 body{
     padding: 0;
@@ -12,18 +13,20 @@ text-align: center;
     background-color:hsl(240, 78%, 98%);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-#top-image{
-    position: absolute;
-    bottom: 0;
+#bg-bottom{
+    background-image: url("images/bg-bottom.svg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    height: 100vh;
+
 }
-#bottom-image{
-    position: absolute;
-    right:0; 
-    z-index: 1;
+#bg-top{
+    background-repeat: no-repeat;
+    background-image: url("images/bg-top.svg"); 
+    background-position: top right;
+
 }
 #header{
-    position: relative;
-    z-index: 2;
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding-top: 8vh;
@@ -33,11 +36,8 @@ text-align: center;
     color: hsl(233, 13%, 49%);
 }
 #price-container{
-    z-index: 2;
     display: flex;
-    justify-content: center;
-    position: relative; 
-    height: 600px;
+    justify-content: center; 
     padding-top: 3vh;
     padding-bottom: 50px;
 }
@@ -75,7 +75,6 @@ input[type="checkbox"]#toggle {
 }
 #label-1{
     position: relative;
-    z-index: 2;
     display: inline-block;
     height: 45px;
     width: 90px;
@@ -83,7 +82,7 @@ input[type="checkbox"]#toggle {
     background:linear-gradient(to left , hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
 }
 #label-1::before{
-    content: " ";
+    content: "";
     width: 35px;
     position: absolute;
     left: 5px;
@@ -104,8 +103,6 @@ input[type="checkbox"]#toggle {
     display: none;
 }
 #plans{
-    position: relative;
-    z-index: 2;
     display: flex;
    justify-content: center;
    margin-bottom: 5vh;
@@ -130,16 +127,20 @@ hr{
 .price,.price2{
     font-size: 4.5em;
     font-weight: 700;
+    margin-bottom: 3vh;
     color:hsl(232, 13%, 33%);
 }
 .price2{
     display: none;
 }
-.storage{
+.container-details{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
     color:hsl(233, 13%, 49%) ;
     font-weight: 700;
 }
 .learn-more{
+    margin-top: 2vh;
     width:100%;
     height: 40px;
     background: linear-gradient(to left , hsl(237, 63%, 64%) , hsl(236, 72%, 79%));
@@ -154,9 +155,7 @@ hr{
 #first:hover, #third:hover, #second:hover
 {
     background: linear-gradient(to left , hsl(237, 63%, 64%) , hsl(236, 72%, 79%));
-    height: 515px;
-    position: relative;
-    top:-15px;
+    
     h4,.price,.storage{
         color: white;
     }
@@ -164,6 +163,7 @@ hr{
         color:  hsl(237, 63%, 64%);
         background: linear-gradient(to left , white , white);
     }
+    transform: scale(1.05);
 
 }
 .dollar{
@@ -175,7 +175,6 @@ hr{
 @media screen and (max-width: 1150px){
 #price-container{
     flex-direction: column;
-    flex-wrap: wrap;
     height: auto;
     align-items: center;
 }
