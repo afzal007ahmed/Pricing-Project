@@ -1,0 +1,186 @@
+html{
+    height:100vh;
+padding: 0;
+margin: 0;
+}
+body{
+    padding: 0;
+margin: 0;
+text-align: center;
+    position: relative;
+    height: 100%; 
+    background-color:hsl(240, 78%, 98%);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#top-image{
+    position: absolute;
+    bottom: 0;
+}
+#bottom-image{
+    position: absolute;
+    right:0; 
+    z-index: 1;
+}
+#header{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 8vh;
+    font-weight: 700;
+    font-size: 30px;
+    padding-bottom: 3vh;
+    color: hsl(233, 13%, 49%);
+}
+#price-container{
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    position: relative; 
+    height: 600px;
+    padding-top: 3vh;
+    padding-bottom: 50px;
+}
+.container{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-right: .3vw;
+    width: 300px;
+    box-shadow: 3px 3px 3px 1px lightgray;
+    border-radius: 15px;
+    background-color: white;
+    
+}
+
+#a-t{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-right: 1vw;
+    font-weight: 700;
+    color:hsl(234, 14%, 74%);
+}
+#m-t{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left:1vw;
+    font-weight: 700;
+    color:hsl(234, 14%, 74%);
+}
+#a-t,#m-t{
+    position: relative;
+    top:-20px;
+    z-index: 2;
+}
+input[type="checkbox"]#toggle {
+    opacity: 0;
+    position: absolute;
+}
+#label-1{
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    height: 45px;
+    width: 90px;
+    border-radius: 25px;
+    background:linear-gradient(to left , hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+}
+#label-1::before{
+    content: " ";
+    width: 35px;
+    position: absolute;
+    left: 5px;
+    top:5px;
+    background-color: white;
+    height: 35px;
+    transition: all .5s 0s ease-in;
+    border-radius:50% ;
+}
+#toggle:checked + #label-1::before{
+    left:50px;
+    transition: all .5s 0s ease-in;
+}
+#toggle:checked ~#price-container .container .price2{
+    display: block;
+}
+#toggle:checked ~#price-container .container .price{
+    display: none;
+}
+#plans{
+    position: relative;
+    z-index: 2;
+    display: flex;
+   justify-content: center;
+   margin-bottom: 5vh;
+   margin-top: 4vh;
+   height: 5vh;
+   align-items: center;
+   flex-shrink: 0;
+   align-items: center;
+}
+h4{
+    color:hsl(232, 13%, 33%);
+}
+hr{
+    color: hsl(240, 78%, 98%) ;
+    height:.1px;
+}
+
+#first, #second,#third{
+    text-align: center;
+    padding: 40px;
+}
+.price,.price2{
+    font-size: 4.5em;
+    font-weight: 700;
+    color:hsl(232, 13%, 33%);
+}
+.price2{
+    display: none;
+}
+.storage{
+    color:hsl(233, 13%, 49%) ;
+    font-weight: 700;
+}
+.learn-more{
+    width:100%;
+    height: 40px;
+    background: linear-gradient(to left , hsl(237, 63%, 64%) , hsl(236, 72%, 79%));
+    font-weight: 700;
+    color: white;
+    border-radius: 10px;
+    border: 0px;
+    letter-spacing: 1.4px;
+    height:4.5vh;
+    cursor: pointer;
+}
+#first:hover, #third:hover, #second:hover
+{
+    background: linear-gradient(to left , hsl(237, 63%, 64%) , hsl(236, 72%, 79%));
+    height: 515px;
+    position: relative;
+    top:-15px;
+    h4,.price,.storage{
+        color: white;
+    }
+    .learn-more{
+        color:  hsl(237, 63%, 64%);
+        background: linear-gradient(to left , white , white);
+    }
+
+}
+.dollar{
+    font-size: .5em;
+    position: relative;
+    top:-10px;
+
+}
+@media screen and (max-width: 1150px){
+#price-container{
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    align-items: center;
+}
+@media screen and ( max-width:450px) {
+    .container{
+        width: 250px;
+    }
+} 
